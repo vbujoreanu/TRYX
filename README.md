@@ -24,6 +24,10 @@ std::expected<std::string, int> get_a()
 std::string a = TRYX(get_a());
 ```
 
+This results in:
+- saving construction time for big types -- no need to declare a default-constructed object then assign `.value()` to it inside an if statement that is checking `.has_value()` or else returns `unexpected(.error())`
+- a lot cleaner, smaller, and easier to understand code
+
 MSVC compile & run:
 ```
 cl.exe src/main.cpp /EHsc /std:c++latest && main.exe
