@@ -23,3 +23,8 @@ std::expected<std::string, int> get_a()
 
 std::string a = TRYX(get_a());
 ```
+
+MSVC compile & run:
+```
+cl.exe src/main.cpp /EHsc /std:c++latest && main.exe
+```
