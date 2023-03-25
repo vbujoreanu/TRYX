@@ -17,7 +17,7 @@ class scope_guard
     FT function;
 
 public:
-    scope_guard(FT function) : function(function) { }
+    scope_guard(FT&& function) : function(std::move(function)) { }
     ~scope_guard() { function(); }
 };
 
