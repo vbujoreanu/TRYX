@@ -25,18 +25,18 @@ std::expected<std::string, int> get_d()
 
 std::expected<std::string, int> get_concatenation()
 {
-    // TRYX variation 1
+    // TRYX variation 1 - construction / initialization from an rvalue
     std::string a = TRYX(get_a());
 
-    // TRYX variation 2
+    // TRYX variation 2 - assignment from an rvalue
     std::string b;
     b = TRYX(get_b());
 
-    // TRYX variation 3
+    // TRYX variation 3 - construction / initialization from an lvalue
     std::expected<std::string, int> expected_c = get_c();
     std::string c = TRYX(expected_c);
 
-    // TRYX variation 4
+    // TRYX variation 4 - assignment from an lvalue
     std::expected<std::string, int> expected_d = get_d();
     std::string d;
     d = TRYX(expected_d);
